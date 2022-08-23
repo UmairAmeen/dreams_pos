@@ -67,12 +67,12 @@
   color: #333;
   font-weight: 400;
   font-size: 14px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Helvetica Neue","Segoe UI",helvetica,verdana,sans-serif;
   line-height: 1.35715;
 }
 .dx-theme-generic-typography input,
 .dx-theme-generic-typography textarea {
-  font-family: "Nunito", sans-serif;
+  font-family: "Helvetica Neue","Segoe UI",helvetica,verdana,sans-serif;
   line-height: 1.35715;
 }
 .dx-theme-generic-typography .dx-font-xl,
@@ -1598,7 +1598,7 @@
   color: #333;
   font-weight: 800;
   font-size: 14px;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Ruda', sans-serif;
   line-height: 1.35715;
 }
 .dx-widget,
@@ -1622,7 +1622,7 @@
 }
 .dx-widget input,
 .dx-widget textarea {
-  font-family: "Nunito", sans-serif;
+  font-family: "Helvetica Neue","Segoe UI",helvetica,verdana,sans-serif;
   line-height: 1.35715;
 }
 .dx-state-disabled .dx-widget,
@@ -1706,14 +1706,14 @@
   color: #333;
   font-weight: 400;
   font-size: 14px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Helvetica Neue","Segoe UI",helvetica,verdana,sans-serif;
   line-height: 1.35715;
   min-height: 36px;
   padding: 0;
 }
 .dx-field input,
 .dx-field textarea {
-  font-family: "Nunito", sans-serif;
+  font-family: "Helvetica Neue","Segoe UI",helvetica,verdana,sans-serif;
   line-height: 1.35715;
 }
 .dx-field-value.dx-attention {
@@ -4247,7 +4247,7 @@
   color: #333;
   font-weight: 400;
   font-size: 14px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Helvetica Neue","Segoe UI",helvetica,verdana,sans-serif;
   line-height: 1.35715;
 }
 .dx-overlay-wrapper,
@@ -4288,7 +4288,7 @@
 }
 .dx-overlay-wrapper input,
 .dx-overlay-wrapper textarea {
-  font-family: "Nunito", sans-serif;
+  font-family: "Helvetica Neue","Segoe UI",helvetica,verdana,sans-serif;
   line-height: 1.35715;
 }
 .dx-popup-wrapper .dx-state-focused.dx-overlay-content {
@@ -8654,7 +8654,7 @@
   color: #333;
   font-weight: 400;
   font-size: 14px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Helvetica Neue","Segoe UI",helvetica,verdana,sans-serif;
   line-height: 1.35715;
 }
 .dx-menu-base .dx-menu-item-wrapper,
@@ -8750,7 +8750,7 @@
 }
 .dx-menu-base input,
 .dx-menu-base textarea {
-  font-family: "Nunito", sans-serif;
+  font-family: "Helvetica Neue","Segoe UI",helvetica,verdana,sans-serif;
   line-height: 1.35715;
 }
 .dx-menu-base.dx-state-focused {
@@ -11672,10 +11672,6 @@
   margin-left: 4px;
   margin-right: 1px;
 }
-.dx-pager .dx-page-sizes .dx-page-size:hover {
-  background-color: #1B2850;
-  color:#fff;
-}
 .dx-pager .dx-page-sizes .dx-page-size:first-child {
   margin-left: 1px;
 }
@@ -11683,9 +11679,9 @@
 .dx-pager .dx-pages .dx-selection {
   cursor: inherit;
   text-shadow: none;
-  color: #fff;
+  color: #333;
   border-color: transparent;
-  background-color: #FF9F43;
+  background-color: #d4d4d4;
 }
 .dx-pager .dx-light-pages {
   display: inline-block;
@@ -13169,12 +13165,12 @@
   color: #333;
   font-weight: 400;
   font-size: 14px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Helvetica Neue","Segoe UI",helvetica,verdana,sans-serif;
   line-height: 1.35715;
 }
 .dx-datagrid-column-chooser input,
 .dx-datagrid-column-chooser textarea {
-  font-family: "Nunito", sans-serif;
+  font-family: "Helvetica Neue","Segoe UI",helvetica,verdana,sans-serif;
   line-height: 1.35715;
 }
 .dx-datagrid-column-chooser.dx-datagrid-column-chooser-mode-drag .dx-popup-content {
@@ -15262,12 +15258,12 @@ input.dx-hidden {
   color: #333;
   font-weight: 400;
   font-size: 14px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Helvetica Neue","Segoe UI",helvetica,verdana,sans-serif;
   line-height: 1.35715;
 }
 .dx-treelist-column-chooser input,
 .dx-treelist-column-chooser textarea {
-  font-family: "Nunito", sans-serif;
+  font-family: "Helvetica Neue","Segoe UI",helvetica,verdana,sans-serif;
   line-height: 1.35715;
 }
 .dx-treelist-column-chooser.dx-treelist-column-chooser-mode-drag .dx-popup-content {
@@ -20448,7 +20444,7 @@ input.dx-hidden {
   outline: 0;
 }
 .dx-htmleditor-content .ql-code-block-container {
-  font-family: "Nunito", sans-serif;
+  font-family: monospace;
 }
 .dx-htmleditor-content .ql-code-block-container,
 .dx-htmleditor-content code {
@@ -20466,10 +20462,10 @@ input.dx-hidden {
   margin: 0 0 0 auto;
 }
 .dx-htmleditor-content .ql-font-serif {
-  font-family: "Nunito", sans-serif;
+  font-family: Georgia,Times New Roman,serif;
 }
 .dx-htmleditor-content .ql-font-monospace {
-  font-family: "Nunito", sans-serif;
+  font-family: Monaco,Courier New,monospace;
 }
 .dx-htmleditor-content .ql-direction-rtl {
   direction: rtl;
@@ -23094,14 +23090,4 @@ input.dx-hidden {
   left: 0;
   background: rgba(0,0,0,.01);
   opacity: .01;
-}
-.dx-button{
-  background-color: #FF9F43;
-  border: none;
-}
-.dx-button i{
-  color: #fff !important;
-}
-.dx-button:hover{
-  background-color: #1B2850;
 }

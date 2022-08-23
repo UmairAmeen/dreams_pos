@@ -192,70 +192,29 @@ class ProductController extends Controller
 
     public function json(Request $request)
 	{
-		$data = Product::select('*');
-		
-
-		//replace date in request to sale_order.date
+		$data = Product::leftjoin('categories','products.category_id','=','categories.id')
+        ->leftjoin('brands','products.brand_id','=','brands.id')
+        ->select('products.*','categories.name as category_name','brands.name as brand_name');
 
 		$json = processJsonFilters($data, $request, []);
 
-		// if ($request->has('group'))
-		// {
-		// 	$group = json_decode($request->group);
-
-		// 	foreach($json['data'] as $k => $d)
-		// 	{
-		// 		if ($group[0]->selector == "status")
-		// 		{
-		// 			$json['data'][$k]['key'] = saleOrderStatus($d['key']);
-		// 		}
-		// 	}
-		// 	return $json;
-		// }
 		
 		// self processing JSON data
-		// foreach($json as $val)
-		// {
-		// 	if (isset($val->added_by))
-		// 	{
-		// 		$val->added_by = (!empty($user[$val->added_by])) ? $user[$val->added_by] : "-";
-		// 	}
+		foreach($json as $val)
+		{
+			$val->status = check_status($val->status);
 
-		// 	if (isset($val->edited_by))
-		// 	{
-		// 		$val->updated_by = (!empty($user[$val->edited_by])) ? $user[$val->edited_by] : "-";
-		// 	}
-		// 	$val->posted = ($val->posted) ? "<a class='btn btn-success'>Yes</a>" : "<a class='btn btn-warning' onclick='changeStatus(".$val->id.")'>No</a>";
-		// 	;
-		// 	$val->status = saleOrderStatusHtml($val->status);
-		// 	$profit_button = "";
-    	// 		if ($val->posted && $isAdmin) {
-    	// 			$profit_button = '<a title="Profit" class="btn btn-primary px-3" href="'.url('reports/profit').'?sale_id='.$val->invoice_id.'" target="_blank"><i class="fas fa-chart-line"></i></a><br>';
-    	// 		}
-    	// 		$val->action = '
-		// 		<a title="Details" class="btn btn-primary px-3" href="'. route('sale_orders.show', $val->id) .'"><i class="fas fa-info"></i></a>
-		// 		<a title="View Invoice" class="btn btn-default px-3" target="_blank" href="'.route('invoices.show', $val->invoice_id) .'"><i class="fas fa-file-invoice"></i></a>
-		// 		<a title="View Receipt" class="btn btn-success px-3" target="_blank" href="'.url('smallInvoice/'. $val->invoice_id) .'"><i class="fas fa-receipt"></i></a>
-		// 		<form action="'. route('sale_orders.destroy', $val->id) .'" method="POST" style="display: inline;" >
-		// 				<input type="hidden" name="_method" value="DELETE">
-		// 					<input type="hidden" name="_token" value="'. csrf_token() .'">
-		// 					<button type="submit" class="btn btn-danger px-3" onclick="return confirm(\'Delete? Are you sure?\');"><i class="fas fa-trash"></i></button>
-		// 				</form>
-		// 		'.$profit_button;
-		// }
-	
-	// 	$salesPersons = SalesPerson::pluck('name','id');
-	
-	// 	$debit = Transaction::groupBy('invoice_id')->where('type','in')
-    // ->selectRaw('sum(amount) as debit, invoice_id')->pluck('debit','invoice_id');
-	
-	// 	$credit = Transaction::groupBy('invoice_id')->where('type','out')
-    // ->selectRaw('sum(amount) as credit, invoice_id')->pluck('credit','invoice_id');
-
-	// 	foreach($json as $key => $val){
-	// 		$json[$key]['balance'] = $credit[$val->invoice_id] - $debit[$val->invoice_id];
-	// 		$json[$key]['sales_person'] = ($val->manual_sales_person)?$val->manual_sales_person:(($val->sales_people_id)?$salesPersons[$val->sales_people_id]:'-');
-	// 	}
+    			// $val->action = '
+				// <a title="Details" class="btn btn-primary px-3" href="'. route('sale_orders.show', $val->id) .'"><i class="fas fa-info"></i></a>
+				// <a title="View Invoice" class="btn btn-default px-3" target="_blank" href="'.route('invoices.show', $val->invoice_id) .'"><i class="fas fa-file-invoice"></i></a>
+				// <a title="View Receipt" class="btn btn-success px-3" target="_blank" href="'.url('smallInvoice/'. $val->invoice_id) .'"><i class="fas fa-receipt"></i></a>
+				// <form action="'. route('sale_orders.destroy', $val->id) .'" method="POST" style="display: inline;" >
+				// 		<input type="hidden" name="_method" value="DELETE">
+				// 			<input type="hidden" name="_token" value="'. csrf_token() .'">
+				// 			<button type="submit" class="btn btn-danger px-3" onclick="return confirm(\'Delete? Are you sure?\');"><i class="fas fa-trash"></i></button>
+				// 		</form>
+				// '.$profit_button;
+		}
 	
 		return ['data'=>$json,'totalCount'=>$data->count()];
 	}
