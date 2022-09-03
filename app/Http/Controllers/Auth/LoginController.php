@@ -32,10 +32,10 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showLoginForm()
-    {
-        return view('backend.login');
-    }
+    // public function showLoginForm()
+    // {
+    //     return view('backend.login');
+    // }
 
     /**
      * Create a new controller instance.

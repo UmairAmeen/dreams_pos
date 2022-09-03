@@ -70,3 +70,7 @@ Route::group(['middleware' => 'auth'],function(){
 // sql route end here
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
