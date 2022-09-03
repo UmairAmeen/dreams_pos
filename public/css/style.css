@@ -1,0 +1,508 @@
+/*------------------------------------------------------------------
+[Main Stylesheet]
+
+Project:    ODDO
+Version:    1.1.0
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+    *. Login Layout / .login
+   
+    *. Login inner form / .login-inner-form
+    *. Login inner form details / .details
+-------------------------------------------------------------------*/
+
+/** GLOBAL CLASSES **/
+
+body {
+    font-family: "Nunito", sans-serif;
+    color: #535353;
+}
+
+.img-fluid {
+    max-width: 100% !important;
+    height: auto;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+.login-box .alert {
+    padding: 15.5px 20px;
+    font-size: 13px;
+    border: none !important;
+    border-radius: 3px;
+    margin-bottom: 25px;
+}
+
+.login-box .alert-dismissible .btn-close {
+    padding: 18.5px 19px;
+    background-size: 8px;
+}
+
+.login-box .alert-dismissible .btn-close:focus,
+.login-box .alert-dismissible .btn-close:active {
+    box-shadow: none;
+}
+
+.login-box .password-indicator {
+    position: absolute;
+    right: 15px;
+    top: 17px;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 300ms, opacity 500ms;
+    font-size: 17px;
+    color: #999;
+}
+
+.login-box .password-wrapper:hover .password-indicator {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s linear 0s, opacity 500ms;
+    font-size: 17px;
+    color: #555;
+}
+
+.login-box .login-popover {
+    font-size: 14px;
+    color: #777;
+    cursor: help;
+}
+
+.login-box .login-popover-abs {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.popover {
+    border: 1px solid #ebeef5 !important;
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+}
+
+.popover-header {
+    box-shadow: none;
+    border: 0px;
+    background: #fff;
+    color: #555;
+    font-size: 15px;
+    font-family: "Nunito", sans-serif;
+    padding-bottom: 5px;
+}
+
+.popover-body {
+    padding: 5px 10px 10px 16px;
+    color: #777;
+    font-size: 13px;
+}
+
+.login-box .form-group label.error {
+    font-size: 13px;
+    text-align: left;
+    color: #535353;
+    width: 100%;
+}
+
+/** Login 3 start **/
+
+.login-inner {
+    position: relative;
+    min-height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 30px 0;
+}
+
+.login-inner:before {
+    content: "";
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url(../img/img-3.jpg) top left repeat;
+    z-index: -99;
+}
+
+.login h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: "Nunito", sans-serif;
+}
+
+.login .logo {
+    top: 80px;
+    position: absolute;
+}
+
+.login .logo img {
+    height: 30px;
+}
+
+.login .form-info {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.login .form-section {
+    padding: 160px 80px 60px;
+    border-radius: 10px 0 0 10px;
+    text-align: left;
+    position: relative;
+}
+
+.login label {
+    color: #535353;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.login .form-section p {
+    font-size: 16px;
+    color: #535353;
+}
+
+.login .form-section a {
+    color: #535353;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.login .form-section p {
+    margin-bottom: 40px;
+}
+
+.login .form-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+.login .form-section .social-list li {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.login .form-section .thembo {
+    margin-left: 4px;
+}
+
+.login .form-section h1 {
+    font-size: 27px;
+    font-weight: 600;
+    color: #fe820e;
+}
+
+.login .form-section h3 {
+    margin: 0 0 35px;
+    font-size: 23px;
+    font-weight: 400;
+    color: #040404;
+}
+
+.login .form-section .form-group {
+    margin-bottom: 25px;
+}
+
+.login .form-section .form-control {
+    padding: 10px 20px;
+    font-size: 16px;
+    outline: none;
+    height: 50px;
+    color: #535353;
+    border-radius: 3px;
+    font-weight: 500;
+    border: 1px solid transparent;
+    background: #fff5f5;
+}
+
+.login .form-section .checkbox .terms {
+    margin-left: 3px;
+}
+
+.login .form-section .terms {
+    margin-left: 3px;
+}
+
+.login .btn-section {
+    border-radius: 50px;
+    margin-bottom: 0;
+    display: inline-block;
+    top: 80px;
+    position: absolute;
+    right: 90px;
+}
+
+.login .btn-section .link-btn {
+    font-size: 14px;
+    float: left;
+    text-align: center;
+    width: 100px;
+    padding: 6px 5px;
+    margin-left: 5px;
+    color: #535353;
+    border-radius: 3px;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.login .btn-section .active-bg {
+    color: #fff;
+    background: #fe820e;
+}
+
+.login .btn-section .link-btn:hover {
+    color: #fff;
+    background: #fe820e;
+}
+
+.login .form-check-input:focus {
+    box-shadow: none;
+}
+
+.login .form-section .form-check-input {
+    width: 20px;
+    height: 20px;
+    margin-top: 0;
+    border: 1px solid #fff5f5;
+    border-radius: 3px;
+    position: absolute;
+    background-color: #fff5f5;
+}
+
+.login .form-check-input:checked {
+    background-color: #fe820e;
+}
+
+.login .form-section .form-check-label {
+    padding-left: 5px;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: #535353;
+}
+
+.login .btn-theme {
+    color: #fff;
+    text-align: center;
+    border: 2px solid transparent;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition: all .7s ease;
+    border-radius: 3px;
+    font-size: 17px;
+    font-weight: 400;
+    font-family: "Nunito", sans-serif;
+}
+
+.login .btn-theme:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .7s ease;
+    z-index: -1;
+    border-radius: 3px;
+}
+
+.login .btn-theme:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .7s ease;
+    z-index: -1;
+}
+
+.login .btn-theme:hover {
+    background: transparent;
+}
+
+.login .btn-theme:hover:before {
+    width: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+.login .btn-theme:hover:after {
+    width: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+.login .btn-lg {
+    padding: 0 50px;
+    line-height: 46px;
+}
+
+.login .btn {
+    box-shadow: none !important;
+}
+
+.login .btn-md {
+    padding: 0 45px;
+    line-height: 41px;
+}
+
+.login .btn-primary {
+    background: #fe820e;
+}
+
+.login .btn-primary:before {
+    background: #fe820e;
+}
+
+.login .btn-primary:after {
+    background: #fe820e;
+}
+
+.login .btn-primary:hover {
+    color: #fe820e;
+    border: 2px solid #fe820e;
+}
+
+.login .social-list a {
+    font-size: 18px;
+    margin-right: 20px;
+    color: #535353;
+}
+
+.login .social-list a:hover {
+    color: #fe820e;
+}
+
+.login .login-bodycolor {
+    background: #fff;
+}
+
+.login-bodycolor .ripple-background {
+    z-index: -999 !important;
+}
+
+.login-bodycolor .ripple-background .circle {
+    position: absolute;
+    border-radius: 50%;
+    animation: ripple 15s infinite;
+}
+
+.login-bodycolor .ripple-background .small {
+    width: 200px;
+    height: 200px;
+    left: -100px;
+    top: -100px;
+    z-index: -999;
+}
+
+.login-bodycolor .ripple-background .medium {
+    width: 400px;
+    height: 400px;
+    left: -200px;
+    top: -200px;
+    z-index: -999;
+}
+
+.login-bodycolor .ripple-background .large {
+    width: 600px;
+    height: 600px;
+    left: -300px;
+    top: -300px;
+    z-index: -999;
+}
+
+.login-bodycolor .ripple-background .xlarge {
+    width: 800px;
+    height: 800px;
+    left: -400px;
+    top: -400px;
+    z-index: -999;
+}
+
+.login-bodycolor .ripple-background .xxlarge {
+    width: 1000px;
+    height: 1000px;
+    left: -500px;
+    top: -500px;
+    z-index: -999;
+}
+
+.login-bodycolor .ripple-background .shade1 {
+    background: #fdd0ab;
+}
+
+.login-bodycolor .ripple-background .shade2 {
+    background: #ffb67a;
+}
+
+.login-bodycolor .ripple-background .shade3 {
+    background: #faa453;
+}
+
+.login-bodycolor .ripple-background .shade4 {
+    background: #fa8c24;
+}
+
+.login-bodycolor .ripple-background .shade5 {
+    background: #fe820e;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0.8);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 992px) {
+    .login-inner:before {
+        background: none;
+    }
+    .login .form-section {
+        padding: 120px 34px 40px;
+        border-radius: 10px 0 0 10px;
+    }
+    .login .logo {
+        top: 40px;
+        left: 40px;
+    }
+    .login .btn-section {
+        top: 40px;
+        right: 40px;
+    }
+    .login-bodycolor .ripple-background {
+        display: none;
+    }
+}
+
+/** Login 3 end **/

@@ -7,7 +7,7 @@
 		<meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern,  html5, responsive">
 		<meta name="author" content="Dreamguys - Bootstrap Admin Template">
 		<meta name="robots" content="noindex, nofollow">
-		<title>{{ config('app.name') }} - Admin Dashboard</title>
+		<title>{{ config('app.name') }}</title>
 
 		<link rel="shortcut icon" type="image/x-icon" href="{{asset('theme/assets/img/favicon.png')}}">
 

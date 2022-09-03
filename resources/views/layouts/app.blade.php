@@ -1,80 +1,145 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+		<meta name="description" content="POS - Bootstrap Admin Template">
+		<meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern,  html5, responsive">
+		<meta name="author" content="Dreamguys - Bootstrap Admin Template">
+		<meta name="robots" content="noindex, nofollow">
+		<title>{{ config('app.name') }}</title>
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+		<link rel="shortcut icon" type="image/x-icon" href="{{asset('theme/assets/img/favicon.png')}}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+		<link rel="stylesheet" href="{{asset('theme/assets/css/bootstrap.min.css')}}">
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+		<link rel="stylesheet" href="{{asset('theme/assets/css/animate.css')}}">
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+		<link rel="stylesheet" href="{{asset('theme/assets/css/dataTables.bootstrap4.min.css')}}">
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+		<link rel="stylesheet" href="{{asset('theme/assets/plugins/fontawesome/css/fontawesome.min.css')}}">
+		<link rel="stylesheet" href="{{asset('theme/assets/plugins/fontawesome/css/all.min.css')}}">
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+		<link rel="stylesheet" href="{{asset('theme/assets/css/style.css')}}">
+		<!-- Dev Express Data Grid -->
+		<link rel="stylesheet" href="{{asset('theme/assets/css/dx.light.css')}}?v=0.4"> 
+        <!-- Custom login Stylesheet -->
+        <link type="text/css" rel="stylesheet" href="{{asset('css/style.css')}}">
+	</head>
+    <body>
+        <!-- Authentication -->
+        @guest
+        <div id="top" class="login-bodycolor">
+            <div class="login">
+                <div class="login-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-info">
+                                    <div class="form-section align-self-center">
+                                        <div class="btn-section clearfix">
+                            
+                                        @if (Route::has('login'))
+                                            <a href="{{ route('login') }}" class="link-btn active btn-1 active-bg default-bg">Login</a>
+                                            @endif 
+                                            @if (Route::has('register'))
+                                            <a href="{{ route('register') }}" class="link-btn btn-2">Register</a>
+                                            @endif
+                                        </div>
+                                        <div class="logo">
+                                            <a href="{{ route('login') }}">
+                                            <img src="{{asset('theme/assets/img/logo.png')}}" alt="logo">
+                                        </a>
+                                        </div>
+                                        <h1>Welcome!</h1>
 
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
+                                        @yield('login_content')
+                                        <p>Help & Support</p>
+                                        <div class="social-list">
+                                            <a href="#">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                            <a href="#">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                            <a href="{{ url('auth/google') }}">
+                                            <i class="fa fa-google"></i>
+                                        </a>
+                                            <a href="#">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                            <a href="#">
+                                            <i class="fa fa-pinterest"></i>
+                                        </a>
+                                            <a href="#">
+                                            <i class="fa fa-youtube"></i>
+                                        </a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </li>
-                        @endguest
-                    </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </nav>
 
-        <main class="py-4">
+
+            <!-- Ripple background start -->
+            <div class="ripple-background">
+                <div class="circle xxlarge shade1"></div>
+                <div class="circle xlarge shade2"></div>
+                <div class="circle large shade3"></div>
+                <div class="circle mediun shade4"></div>
+                <div class="circle small shade5"></div>
+            </div>
+            <!-- Ripple background end -->
+
+            <!-- External JS libraries -->
+            <!-- <script src="{{asset('js/jquery-3.6.0.min.js')}}"></script>
+            <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
+            <script src="{{asset('js/jquery.validate.min.js')}}"></script>
+            <script src="{{asset('js/app.js')}}"></script> -->
+            <!-- Custom JS Script -->
+        </div> 
+
+        @else
+        
+        <!-- Pre-loader -->
+        <div id="global-loader">
+            <div class="whirly-loader"> </div>
+        </div>
+        <!-- End Preloader-->
+
+        <!-- Start Header -->
+        @include('includes.header')
+        <!-- Header End -->
+
+        <!-- Start Topbar -->
+        @include('includes.top-nav')
+        <!-- Topbar End -->
+
+        <!-- Start Left Sidebar -->
+        @include('includes.sidebar')
+        <!-- Left Sidebar End -->
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
             @yield('content')
-        </main>
-    </div>
-</body>
-</html>
+        </div>
+        <!-- Page Content End -->
+
+        <!-- Start Footer -->
+        @include('includes.footer')
+        <!-- Footer End -->
+
+        @yield('script')
+
+       @endguest
+    </body>
+
+    </html>
+
