@@ -15,34 +15,33 @@ Version:    1.1.0
 
 /** GLOBAL CLASSES **/
 
-body {
-    font-family: "Nunito", sans-serif;
-    color: #535353;
-}
-
 .img-fluid {
     max-width: 100% !important;
     height: auto;
 }
 
-.form-control:focus {
-    box-shadow: none;
+.login .heading {
+    color: #fe820e;
 }
 
+/* .form-control:focus {
+    box-shadow: none;
+} */
+/* 
 .login-box .alert {
     padding: 15.5px 20px;
     font-size: 13px;
     border: none !important;
     border-radius: 3px;
     margin-bottom: 25px;
-}
+} */
 
-.login-box .alert-dismissible .btn-close {
+/* .login-box .alert-dismissible .btn-close {
     padding: 18.5px 19px;
     background-size: 8px;
-}
+} */
 
-.login-box .alert-dismissible .btn-close:focus,
+/* .login-box .alert-dismissible .btn-close:focus,
 .login-box .alert-dismissible .btn-close:active {
     box-shadow: none;
 }
@@ -77,9 +76,9 @@ body {
     position: absolute;
     right: 15px;
     top: 15px;
-}
+} */
 
-.popover {
+/* .popover {
     border: 1px solid #ebeef5 !important;
     box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
 }
@@ -90,7 +89,6 @@ body {
     background: #fff;
     color: #555;
     font-size: 15px;
-    font-family: "Nunito", sans-serif;
     padding-bottom: 5px;
 }
 
@@ -105,17 +103,17 @@ body {
     text-align: left;
     color: #535353;
     width: 100%;
-}
+} */
 
 /** Login 3 start **/
 
 .login-inner {
     position: relative;
     min-height: 100vh;
-    text-align: center;
+    /* text-align: center; */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
     overflow: hidden;
     padding: 30px 0;
 }
@@ -131,25 +129,10 @@ body {
     z-index: -99;
 }
 
-.login h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-    font-family: "Nunito", sans-serif;
-}
-
-.login .logo {
+/* .login .logo {
     top: 80px;
     position: absolute;
-}
+} */
 
 .login .logo img {
     height: 30px;
@@ -163,7 +146,7 @@ h6,
     margin: 0 auto;
 }
 
-.login .form-section {
+/* .login .form-section {
     padding: 160px 80px 60px;
     border-radius: 10px 0 0 10px;
     text-align: left;
@@ -311,7 +294,6 @@ h6,
     border-radius: 3px;
     font-size: 17px;
     font-weight: 400;
-    font-family: "Nunito", sans-serif;
 }
 
 .login .btn-theme:before {
@@ -386,7 +368,7 @@ h6,
 .login .btn-primary:hover {
     color: #fe820e;
     border: 2px solid #fe820e;
-}
+} */
 
 .login .social-list a {
     font-size: 18px;
@@ -395,6 +377,14 @@ h6,
 }
 
 .login .social-list a:hover {
+    color: #fe820e;
+}
+
+.login .link {
+    color: #535353;
+}
+
+.login .link:hover {
     color: #fe820e;
 }
 
@@ -492,10 +482,10 @@ h6,
         padding: 120px 34px 40px;
         border-radius: 10px 0 0 10px;
     }
-    .login .logo {
+    /* .login .logo {
         top: 40px;
         left: 40px;
-    }
+    } */
     .login .btn-section {
         top: 40px;
         right: 40px;

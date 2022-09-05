@@ -1,4 +1,4 @@
-@extends('backend.layout.app') 
+@extends('layouts.app') 
 
     @section('content')
            <!-- Left Sidebar End -->

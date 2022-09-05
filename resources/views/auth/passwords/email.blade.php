@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('login_content')
-    <h3>Recover Your Password</h3>
-    <div class="clearfix"></div>
+    <div class="page-title mb-3">
+        <h4>Recover Your Password</h4>
+    </div>
     @if (session('status'))
         <div class="alert alert-success" role="alert">
             {{ session('status') }}
@@ -12,7 +13,7 @@
         @csrf
         <div class="form-group">
             <label for="email" class="form-label">Email address</label>
-            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" placeholder="Email Address">
 
             @error('email')
                 <span class="invalid-feedback" role="alert">
@@ -21,7 +22,7 @@
             @enderror
         </div>
         <div class="form-group clearfix">
-            <button type="submit" class="btn btn-primary btn-lg btn-theme">Send Me Email</button>
+            <button type="submit" class="btn btn-submit">Send Me Email</button>
         </div>
     </form>
 @endsection
