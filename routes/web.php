@@ -13,18 +13,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-	
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
-
 Route::group(['middleware' => 'auth'],function(){
-
+	Route::get('/', 'HomeController@index')->name('home');
 
 	// ajax route
 	Route::get('fetch/category_brands/{category}','ProductController@category_brands');

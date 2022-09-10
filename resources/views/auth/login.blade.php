@@ -38,7 +38,7 @@
             @endif
         </div>
         <div class="form-group clearfix">
-            <button type="submit" class="btn btn-submit">Login</button>
+            <button type="submit" class="btn btn-submit mb-1">Login</button>
         </div>
     </form>
 @endsection

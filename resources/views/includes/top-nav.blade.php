@@ -173,7 +173,7 @@
             <hr class="m-0">
             <form method="post" action="{{route('logout')}}">
               @csrf
-              <a class="dropdown-item logout pb-0"   onclick="this.parentNode.submit();">
+              <a class="dropdown-item logout pb-0" onclick="this.parentNode.submit();">
               <img src="{{asset('theme/assets/img/icons/log-out.svg')}}" class="me-2" alt="img">Logout </a>
             </form>
           </div>
@@ -187,7 +187,10 @@
       <div class="dropdown-menu dropdown-menu-right">
         <a class="dropdown-item" href="profile.html">My Profile</a>
         <a class="dropdown-item" href="generalsettings.html">Settings</a>
-        <a class="dropdown-item" href="">Logout</a>
+        <form method="post" action="{{route('logout')}}">
+          @csrf
+          <a class="dropdown-item logout" onclick="this.parentNode.submit();">Logout</a>
+        </form>
       </div>
     </div>
   </div>

@@ -20,5 +20,7 @@
 <script src="{{asset('theme/assets/js/script.js')}}"></script>
 
 <script type="text/javascript" src="{{asset('theme/assets/js/dx.all.js')}}"></script>
+
+<script src="{{asset('theme/assets/plugins/toastr/toastr.min.js')}}"></script>
 </body>
 </html>

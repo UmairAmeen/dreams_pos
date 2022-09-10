@@ -64,6 +64,11 @@ function check_status($check)
 	return $status;
 }
 
+function checkActiveLink()
+{
+    
+}
+
 function numberformat($number)
 {
 	return 'Rs'.' '. number_format($number);
